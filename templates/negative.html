@@ -98,13 +98,20 @@
     line-height: 1.5;
     color: #000;
     }
+    .result {
+    margin: 50px;
+    background-color: rgb(77, 0, 0,  0.5);
+    color: #fff;
+    font-family: verdana;
+    font-size: 20px;
+    }
 
 </style>
 </head>
 <body>
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <link href='https://fonts.googleapis.com/css?family=Anton|Passion+One|PT+Sans+Caption' rel='stylesheet' type='text/css'>
-    <div class="container-fluid">
+    <div class="container-fluid" result>
         <div class="col-xs-12 text-center">
             <h2 class="h1">Sorry! The page you tried cannot be found:(</h2>
             <input type="hidden" value="{{ name }}" id="movie_name" oninput="checkSimilarity()" readonly/>
