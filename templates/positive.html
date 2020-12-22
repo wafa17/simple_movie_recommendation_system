@@ -2,7 +2,7 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>Movie Recommender - Praveen Kumar</title>
+  <title>Movie Recommender System - Resys Yuks</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins:300,500&amp;display=swap'>
@@ -19,10 +19,9 @@ html {
 }
 
 body {
-  font-family: "Poppins", sans-serif;
-  font-weight: 300;
-  font-size: 100%;
-    background-color: #ffffff;
+  background-image: url("/static/images/images.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
   line-height: 1.5;
   color: #000;
 }
@@ -92,30 +91,63 @@ figure {
   background-size: cover;
 }
     
-    .movie{
-        height: 70vh;
-        margin-top: 15vh;
-        margin-bottom: 15vh;
-        margin-right: 5vh;
-        margin-left: 5vh;
-        display: block;
-        background-color: white;
-        border-radius: 20px;
-        padding: 1em;
-        width: auto;
-        box-shadow: 0px -10px 20px -5px #E2E2E2;
-        text-align: center;
+      /* Table */
+    .demo-table {
+      border-collapse: collapse;
+      font-size: 13px;
     }
-
-    @media screen and (max-width:600px) {
-        .movie{
-            margin-top: 12vh;
-            margin-bottom: 12vh;
-        }
+    .demo-table th, 
+    .demo-table td {
+      border: 1px solid #e1edff;
+      padding: 7px 17px;
+    }
+    .demo-table .title {
+      caption-side: bottom;
+      margin-top: 12px;
+    }
+    
+    /* Table Header */
+    .demo-table thead th {
+      background-color: #508abb;
+      color: #FFFFFF;
+      border-color: #6ea1cc !important;
+      text-transform: uppercase;
+    }
+    
+    /* Table Body */
+    .demo-table tbody td {
+      color: #353535;
+    }
+    .demo-table tbody td:first-child,
+    .demo-table tbody td:last-child,
+    .demo-table tbody td:nth-child(4) {
+      text-align: right;
+    }
+    .demo-table tbody tr:nth-child(odd) td {
+      background-color: #f4fbff;
+    }
+    .demo-table tbody tr:hover td {
+      background-color: #ffffa2;
+      border-color: #ffff0f;
+      transition: all .2s;
+    }
+    
+    /* Table Footer */
+    .demo-table tfoot th {
+      background-color: #e5f5ff;
+    }
+    .demo-table tfoot th:first-child {
+      text-align: left;
+    }
+    .demo-table tbody td:empty
+    {
+      background-color: #ffcccc;
+    }
 }
     table,tr,td,th{
         border: 1px solid black;
         border-collapse: collapse;
+
     }
     td{
       padding: 10px;  
@@ -129,15 +161,15 @@ figure {
 
 
     <div class="movie">
-        <h2><u>Recommendations:</u></h2>
-        <p>Showing results for: {{ search_name }}</p>
-        <table class="movie_table" align="center">
+        <h2><u>Top Recommendations Movie:</u></h2>
+        <p>Menampilkan hasil dari {{ search_name }}</p>
+        <table class="demo-table" align="center">
             <tr>
                 <th>Movie Title</th>
                 <th>Release Date</th>
             </tr>
-            <tbody class="table_body">
-                <tr>
+            <tbody class="table_body" >
+                <tr >
                     <td>{{ movie_names[0] }}</td>
                     <td>{{ movie_date[0] }}</td>
                 </tr>
@@ -181,11 +213,6 @@ figure {
         </table>
         <br>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-        <p style="margin-top:3em;">
-        Liked it? Spend a moment from you precious time to provide us valuable feedback. <i class="fas fa-smile"></i> Thank you <i class="fas fa-heart"></i>
-        </p>
-        <p style="color: #919191;">Feedback: <a href="https://forms.gle/7NGyYAvSe7Fepm68A">Google Form Link</a></p>
-        <p style="margin-bottom: 2em; border: 1px solid grey;">Read more on recommendation systems on <a href="https://developers.google.com/machine-learning/recommendation" target="_blank">Google Developers Machine Learning Blogs</a>.</p>
   </div>
 <!-- partial -->
   <script src='https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js'></script>
